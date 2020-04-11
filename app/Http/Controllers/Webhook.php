@@ -170,7 +170,7 @@ class Webhook extends Controller
                 // send question no.1
                 $this->sendQuestion($event['replyToken'], 1);
             } else {
-                $message = 'Aku gapaham sama yang kamu tulis, Silakan kirim pesan "MULAI" untuk memulai memulai.';
+                $message = 'Aku gapaham sama yang kamu tulis karena belum dilatih untuk memahami semua bahasa manusia, Jadi, kirim pesan "MULAI" aja ya kalau ingin memulai memulai.';
                 $textMessageBuilder = new TextMessageBuilder($message);
                 $this->bot->replyMessage($event['replyToken'], $textMessageBuilder);
             }
