@@ -132,8 +132,8 @@ class Webhook extends Controller
             $profile = $res->getJSONDecodedBody();
     
             // create welcome message
-            $message  = "Salam kenal, " . $profile['displayName'] . "!\n";
-            $message .= "Silakan kirim pesan \"MULAI\" untuk memulai kuis Tebak Kode.";
+            $message  = "Hai, " . $profile['displayName'] . "!\n";
+            $message .= "Selamat datang di akun LINE tebak bendera. Silakan kirim pesan \"MULAI\" untuk memulai permainan. Setiap hal yang diketik selama proses permainan berlangsung akan terekam sebagai jawaban. Jadi, jangan nulis yang aneh2 ya, pastikan jawabanmu benar...";
             $textMessageBuilder = new TextMessageBuilder($message);
     
             // create sticker message
@@ -170,7 +170,7 @@ class Webhook extends Controller
                 // send question no.1
                 $this->sendQuestion($event['replyToken'], 1);
             } else {
-                $message = 'Aku gapaham sama yang kamu tulis, Silakan kirim pesan "MULAI" untuk memulai kuis.';
+                $message = 'Aku gapaham sama yang kamu tulis, Silakan kirim pesan "MULAI" untuk memulai memulai.';
                 $textMessageBuilder = new TextMessageBuilder($message);
                 $this->bot->replyMessage($event['replyToken'], $textMessageBuilder);
             }
@@ -187,7 +187,7 @@ class Webhook extends Controller
         $stickerMessageBuilder = new StickerMessageBuilder(1, 106);
     
         // create text message
-        $message = 'Silakan kirim pesan "MULAI" untuk memulai kuis.';
+        $message = 'Silakan kirim pesan "MULAI" untuk memulai permainan.';
         $textMessageBuilder = new TextMessageBuilder($message);
     
         // merge all message
@@ -247,8 +247,8 @@ class Webhook extends Controller
     
             // create play again message
             $message = ($this->user['score'] < 8) ?
-                'Wkwkwk! Nyerah? Ketik "MULAI" untuk bermain lagi!':
-                'Great! Mantap bro! Ketik "MULAI" untuk bermain lagi!';
+                'HAHAHHAHAHAHAHAHA! Kok goblok sih gitu aja gatau :v. Mau main lagi untuk membuktikan kecerdasanmu? Ketik "MULAI" untuk bermain lagi!':
+                'WIHHHH!!! Tumben dapet bagus, mau main lagi ga? Kalau iya, Ketik "MULAI" untuk bermain lagi!';
             $textMessageBuilder2 = new TextMessageBuilder($message);
     
             // merge all message
