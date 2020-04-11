@@ -137,7 +137,7 @@ class Webhook extends Controller
             $textMessageBuilder = new TextMessageBuilder($message);
     
             // create sticker message
-            $stickerMessageBuilder = new StickerMessageBuilder(1, 3);
+            $stickerMessageBuilder = new StickerMessageBuilder(2, 34);
     
             // merge all message
             $multiMessageBuilder = new MultiMessageBuilder();
